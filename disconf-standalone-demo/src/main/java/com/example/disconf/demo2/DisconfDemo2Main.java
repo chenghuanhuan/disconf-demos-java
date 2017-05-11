@@ -1,5 +1,6 @@
 package com.example.disconf.demo2;
 
+import com.baidu.disconf.client.usertools.DisconfDataGetter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -25,7 +26,10 @@ public class DisconfDemo2Main {
     public static void main(String[] args) {
         contextInitialized();
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(fn);
-
+        System.out.println(DisconfDataGetter.getByFileItem("redis.properties", "redis.port"));
+        Object aa = DisconfDataGetter.getByItem("discountRate");
+        System.out.println(aa);
+        System.out.println(Coefficients.getDiscountRate());
         try {
             System.in.read();
         } catch (IOException e) {
