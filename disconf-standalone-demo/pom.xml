@@ -11,7 +11,7 @@
         <dependency>
             <groupId>com.baidu.disconf</groupId>
             <artifactId>disconf-client</artifactId>
-            <version>2.6.36</version>
+            <version>2.6.37-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -83,10 +83,10 @@
                     <include>*.*</include>
                 </includes>
             </resource>
-            <resource>
+      <!--      <resource>
                 <directory>${basedir}/profile/test</directory>
                 <filtering>true</filtering>
-            </resource>
+            </resource>-->
         </resources>
 
         <plugins>
@@ -131,9 +131,9 @@
 
         </plugins>
 
-        <filters>
+     <!--   <filters>
             <filter>${basedir}/profile/test/disconf.properties</filter>
-        </filters>
+        </filters>-->
     </build>
 
     <profiles>
@@ -153,7 +153,7 @@
             </build>
         </profile>
 
-        <profile>
+<!--        <profile>
             <id>test</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -163,15 +163,37 @@
             </properties>
             <build>
                 <resources>
-                    <!-- 指定环境差异配置的配置文件所在目录 -->
+                    &lt;!&ndash; 指定环境差异配置的配置文件所在目录 &ndash;&gt;
                     <resource>
                         <directory>${basedir}/profile/test</directory>
                     </resource>
                 </resources>
             </build>
-        </profile>
+        </profile>-->
     </profiles>
 
-
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://maven.ikuko.com/nexus/content/groups/public/</url>
+            <releases>
+            </releases>
+            <snapshots>
+            </snapshots>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://maven.ikuko.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>SnapShots</name>
+            <url>http://maven.ikuko.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

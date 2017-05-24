@@ -26,14 +26,14 @@ public class DisconfDemo2Main {
     public static void main(String[] args) {
         contextInitialized();
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(fn);
-        System.out.println(DisconfDataGetter.getByFileItem("redis.properties", "redis.port"));
+     /*   System.out.println(DisconfDataGetter.getByFileItem("redis.properties", "redis.port"));
         Object aa = DisconfDataGetter.getByItem("discountRate");
         System.out.println(aa);
-        System.out.println(Coefficients.getDiscountRate());
-        try {
+        System.out.println(Coefficients.getDiscountRate());*/
+      /*  try {
             System.in.read();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

@@ -23,4 +23,12 @@
           init-method="init" destroy-method="destroy">
     </bean>
 
+    <bean id="configproperties_no_reloadable_disconf"
+          class="com.baidu.disconf.client.addons.properties.IKuKoReloadablePropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>myserver.properties</value>
+            </list>
+        </property>
+    </bean>
 </beans>
